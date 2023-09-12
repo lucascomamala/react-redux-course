@@ -9,14 +9,9 @@ root.render(
 
 
 function App() {
-  let msg = 'Hello World'
-  if (Math.random() > 0.5) {
-    msg = 'Hello React'
-  }
-
   return (
     <div>
-      <h1>{msg}</h1>
+      <h1>{new Date().toLocaleTimeString()}</h1>
     </div>
   )
 }
