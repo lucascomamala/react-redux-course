@@ -10,9 +10,11 @@ root.render(
 
 function App() {
   const name = 'lucas'
+  const age =23
+
   return (
     <div>
-      <h1>{name}</h1>
+      <h1>Hi my name is {name}, and my age is {age}</h1>
     </div>
   )
 }
