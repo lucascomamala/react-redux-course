@@ -9,9 +9,10 @@ root.render(
 
 
 function App() {
+  const name = 'lucas'
   return (
     <div>
-      <h1>{new Date().toLocaleTimeString()}</h1>
+      <h1>{name}</h1>
     </div>
   )
 }
