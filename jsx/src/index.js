@@ -11,7 +11,9 @@ root.render(
 function App() {
   return (
     <input
-      autoFocus
+      maxLength={10}
+      spellCheck
+      style={{ color: 'red', border: '1px solid blue' }}
     />
   )
 }
