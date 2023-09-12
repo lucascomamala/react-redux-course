@@ -11,12 +11,7 @@ root.render(
 function App() {
   return (
     <input
-      type='number'
-      min={5}
-      max={10}
-      alt='test'
-      style={{ color: 'red' }}
-      list={[1, 2, 3]}
+      autoFocus
     />
   )
 }
