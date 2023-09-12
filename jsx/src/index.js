@@ -9,12 +9,14 @@ root.render(
 
 
 function App() {
-  const name = 'lucas'
-  const age =23
-
   return (
-    <div>
-      <h1>Hi my name is {name}, and my age is {age}</h1>
-    </div>
+    <input
+      type='number'
+      min={5}
+      max={10}
+      alt='test'
+      style={{ color: 'red' }}
+      list={[1, 2, 3]}
+    />
   )
 }
