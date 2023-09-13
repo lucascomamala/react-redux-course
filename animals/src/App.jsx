@@ -1,11 +1,11 @@
 const App = () => {
-  const handleClick = () => {
-    console.log('Add animal')
-  }
+  // const handleClick = () => {
+  //   console.log('Add animal')
+  // }
 
   return (
     <div>
-      <button onClick={handleClick}>Add animal</button>
+      <button onClick={() => console.log('Ass animal')}>Add animal</button>
     </div>
   )
 }
