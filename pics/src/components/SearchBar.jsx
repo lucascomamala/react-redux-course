@@ -5,7 +5,7 @@ const SearchBar = ({ onSubmit }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    onSubmit('cats')
+    onSubmit(term)
   }
 
   const handleChange = (e) => {
