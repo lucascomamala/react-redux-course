@@ -4,7 +4,7 @@ import './App.css'
 import AnimalShow from './AnimalShow'
 
 function getRandomAnimal() {
-  const animals = ['bird', 'cat', 'dog', 'gator', 'horse']
+  const animals = ['bird', 'cat', 'dog', 'gator', 'horse', 'cow']
   return animals[Math.floor(Math.random() * animals.length)]
 }
 
@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className='app'>
       <button onClick={handleClick}>Add animal</button>
-      <div>{renderedAnimals}</div>
+      <div className='animal-list'>{renderedAnimals}</div>
     </div>
   )
 }
