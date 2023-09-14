@@ -1,6 +1,6 @@
-const AnimalShow = () => {
+const AnimalShow = ({ type }) => {
   return (
-    <div>AnimalShow</div>
+    <div>{type}</div>
   )
 }
 
