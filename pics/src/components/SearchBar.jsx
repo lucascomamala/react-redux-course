@@ -1,15 +1,21 @@
-import React from 'react'
+import { useState } from "react"
 
 const SearchBar = ({ onSubmit }) => {
+  const [term, setTerm] = useState('')
+
   const handleFormSubmit = (e) => {
     e.preventDefault()
     onSubmit('cats')
   }
 
+  const handleChange = (e) => {
+    setTerm(e.target.value)
+  }
+
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <input />
+        <input value={term} onChange={handleChange} />
       </form>
     </div>
   )
