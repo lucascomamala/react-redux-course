@@ -1,17 +1,16 @@
 import axios from 'axios'
 
-const serachImages = async () => {
+const serachImages = async (query) => {
   const response = await axios.get('https://api.unsplash.com/search/photos', {
     headers: {
       Authorization: 'Client-ID MVlfUDy4yJ4Pbn8Wm46sX1KxcWBjwRADVWZelRtBEG8'
     },
     params: {
-      query: 'cat'
+      query
     }
   })
-
-  console.log(response)
-  return response
+  
+  return response.data.results
 }
 
 export default serachImages
