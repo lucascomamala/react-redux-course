@@ -28,7 +28,11 @@ function App() {
     setBooks(updatedBooks)
   }
 
-  const updateBookById = (id, newTitle) => {
+  const updateBookById = async (id, newTitle) => {
+    const res = await axios.put(`http://localhost:3001/books/${id}`, {
+      title: newTitle
+    })
+    
     const updatedBooks = books.map(book => {
       if (book.id === id) {
         return { ...book, title: newTitle }
