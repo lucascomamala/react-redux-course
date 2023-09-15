@@ -1,8 +1,8 @@
-import React from 'react'
-
-const ImageShow = () => {
+const ImageShow = ({ image }) => {
   return (
-    <div>ImageShow</div>
+    <div>
+      {image.id}
+    </div>
   )
 }
 
