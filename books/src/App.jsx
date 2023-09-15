@@ -8,7 +8,7 @@ function App() {
   const createBook = (title) => {
     const updatedBooks = [
       ...books,
-      { id: 123, title }
+      { id: Math.floor(Math.random() * 9999), title }
     ]
     setBooks(updatedBooks)
   }
