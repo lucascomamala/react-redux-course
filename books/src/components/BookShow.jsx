@@ -5,9 +5,14 @@ import BookEdit from "./BookEdit"
 const BookShow = ({ book, onDelete, onEdit }) => {
   const [showEdit, setShowEdit] = useState(false)
 
+  const handleSubmit = (id, newTitle) => {
+    setShowEdit(false)
+    onEdit(id, newTitle)
+  }
+
   let content = <h3>{book.title}</h3>
   if (showEdit) {
-    content = <BookEdit book={book} onEdit={onEdit} onSubmit={() => setShowEdit(false)} />
+    content = <BookEdit book={book} onSubmit={handleSubmit} />
   }
 
   return (
