@@ -12,10 +12,6 @@ function App() {
     setBooks(res.data)
   }
 
-  useEffect(() => {
-    fetchBooks()
-  }, [])
-
   const createBook = async (title) => {
     const res = await axios.post('http://localhost:3001/books', {
       title
@@ -27,7 +23,7 @@ function App() {
     ]
     setBooks(updatedBooks)
   }
-
+  
   const updateBookById = async (id, newTitle) => {
     const res = await axios.put(`http://localhost:3001/books/${id}`, {
       title: newTitle
@@ -41,13 +37,17 @@ function App() {
     })
     setBooks(updatedBooks)
   }
-
+  
   const deleteBookById = async (id) => {
     await axios.delete(`http://localhost:3001/books/${id}`)
     
     const updatedBooks = books.filter(book => book.id !== id)
     setBooks(updatedBooks)
   }
+  
+  useEffect(() => {
+    fetchBooks()
+  }, [])
 
   return (
     <div className='app'>
