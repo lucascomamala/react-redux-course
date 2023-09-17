@@ -1,7 +1,7 @@
-const Button = () => {
+const Button = ({ children }) => {
   return (
     <button>
-      Hi there
+      {children}
     </button>
   )
 }

@@ -4,16 +4,16 @@ const App = () => {
   return (
     <div>
       <div>
-        <Button />
+        <Button>Click me</Button>
       </div>
       <div>
-        <Button />
+        <Button>Clicfasdfdk me</Button>
       </div>
       <div>
-        <Button />
+        <Button>dsa me</Button>
       </div>
       <div>
-        <Button />
+        <Button>Click me</Button>
       </div>
     </div>
   )
