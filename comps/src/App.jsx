@@ -1,19 +1,30 @@
-import Button from "./components/Button"
+import Button from './components/Button'
 
-const App = () => {
+function App() {
   return (
     <div>
       <div>
-        <Button success>Click me</Button>
+        <Button success rounded outline>
+          Click me!!
+        </Button>
       </div>
       <div>
-        <Button primary>Clicfasdfdk me</Button>
+        <Button danger outline>
+          Buy Now!
+        </Button>
       </div>
       <div>
-        <Button>dsa me</Button>
+        <Button warning>See Deal!</Button>
       </div>
       <div>
-        <Button>Click me</Button>
+        <Button secondary outline>
+          Hide Ads!
+        </Button>
+      </div>
+      <div>
+        <Button secondary rounded>
+          Something!
+        </Button>
       </div>
     </div>
   )
