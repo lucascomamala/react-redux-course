@@ -44,8 +44,16 @@ function Provider({children}) {
     setBooks(updatedBooks)
   }
 
+  const values = {
+    books,
+    fetchBooks,
+    createBook,
+    updateBookById,
+    deleteBookById
+  }
+
   return (
-    <BooksContext.Provider value={{}}>
+    <BooksContext.Provider value={values}>
       {children}
     </BooksContext.Provider>
   )
