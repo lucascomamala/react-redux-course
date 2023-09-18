@@ -11,7 +11,7 @@ const Button = ({
   outline,
   rounded
 }) => {
-  const classes = classnames('px-3 py-1.5 border text-white',{
+  const classes = classnames('flex items-center px-3 py-1.5 border',{
     'border-blue-500 bg-blue-500': primary,
     'border-gray-900 bg-gray-900': secondary,
     'border-green-500 bg-green-500': success,
@@ -19,6 +19,7 @@ const Button = ({
     'border-red-500 bg-red-500': danger,
     'rounded-full': rounded,
     'bg-white': outline,
+    'text-white': !outline,
     'text-blue-500': outline && primary,
     'text-gray-900': outline && secondary,
     'text-green-500': outline && success,
