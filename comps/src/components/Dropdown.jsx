@@ -27,7 +27,9 @@ const Dropdown = ({ options, selected, onSelect }) => {
 
   return (
     <>
-      <div onClick={handleToggleOpen}>{content}</div>
+      <div onClick={handleToggleOpen}>
+        {selected?.label || 'Select...'}
+      </div>
       {isOpen && <div>
         {renderedOptions}
       </div>}
