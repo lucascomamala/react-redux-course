@@ -21,7 +21,7 @@ function App() {
     <div>
       <ButtonPage />
       <AccordionPage />
-      <Dropdown options={options} selected={selected} onSelect={handleSelect} />
+      <Dropdown options={options} value={selected} onChange={handleSelect} />
     </div>
   )
 }
