@@ -6,7 +6,7 @@ function App() {
   const handleClick = () => {
     alert('You clicked me!')
   }
-  
+
   return (
     <div>
       <div>
@@ -16,19 +16,19 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button danger outline>
+        <Button danger onClick={()=>console.log('hello')}>
           <GoDatabase />
           Buy Now!
         </Button>
       </div>
       <div>
-        <Button warning>
+        <Button warning onMouseEnter={()=>{console.log("enter")}}>
           <GoBell />
           See Deal!
         </Button>
       </div>
       <div>
-        <Button secondary outline>
+        <Button secondary outline onMouseLeave={() => { console.log("leave") }}>
           Hide Ads!
         </Button>
       </div>
