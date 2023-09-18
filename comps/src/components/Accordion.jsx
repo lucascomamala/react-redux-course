@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Accordion = ({ items }) => {
-  const [expandedIndex, setExpandedIndex] = useState(0)
+  const [expandedIndex, setExpandedIndex] = useState(2)
 
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex
@@ -11,9 +11,7 @@ const Accordion = ({ items }) => {
         <div>
           {item.label}
         </div>
-        <div>
-          {item.content}
-        </div>
+        {isExpanded && <div>{item.content}</div>}
       </div>
     )
   })
