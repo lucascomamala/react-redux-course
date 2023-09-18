@@ -1,42 +1,25 @@
-import { GoBell, GoTerminal, GoDatabase } from 'react-icons/go'
-
-import Button from './components/Button'
+import ButtonPage from './pages/ButtonPage'
+import Accordion from './components/Accordion'
 
 function App() {
-  const handleClick = () => {
-    alert('You clicked me!')
-  }
-
+  const items = [
+    {
+      label: 'Can i Kick it?',
+      content: 'Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!Yes, you can!'
+    },
+    {
+      label: 'Who let the dogs out?',
+      content: 'Who? Who? Who? Who?'
+    },
+    {
+      label: 'What is love?',
+      content: 'Baby dont hurt me, dont hurt me, no more'
+    }
+  ]
   return (
     <div>
-      <div>
-        <Button className={'mb-5'} success rounded onClick={handleClick}>
-          <GoTerminal />
-          Click me!!
-        </Button>
-      </div>
-      <div>
-        <Button danger onClick={()=>console.log('hello')}>
-          <GoDatabase />
-          Buy Now!
-        </Button>
-      </div>
-      <div>
-        <Button warning onMouseEnter={()=>{console.log("enter")}}>
-          <GoBell />
-          See Deal!
-        </Button>
-      </div>
-      <div>
-        <Button secondary outline onMouseLeave={() => { console.log("leave") }}>
-          Hide Ads!
-        </Button>
-      </div>
-      <div>
-        <Button primary rounded>
-          Something!
-        </Button>
-      </div>
+      <ButtonPage />
+      <Accordion items={items} />
     </div>
   )
 }
