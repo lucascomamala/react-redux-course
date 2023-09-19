@@ -6,7 +6,9 @@ const TablePage = () => {
     { name: 'Apple', color: 'bg-red-500', score: 3 },
     { name: 'Orange', color: 'bg-orange-500', score: 5 },
     { name: 'Banana', color: 'bg-yellow-500', score: 2 },
-    { name: 'Pear', color: 'bg-green-500', score: 1 },
+    { name: 'Pear', color: 'bg-green-600', score: 1 },
+    { name: 'Grape', color: 'bg-purple-500', score: 4 },
+    { name: 'Kiwi', color: 'bg-green-400', score: 2 },
   ]
 
   const config = [
@@ -24,6 +26,11 @@ const TablePage = () => {
       render: (fruit) => fruit.score,
       sortValue: (fruit) => fruit.score
     },
+    {
+      label: <>Score<sup>2</sup></>,
+      render: (fruit) => fruit.score ** 2,
+      sortValue: (fruit) => fruit.score ** 2
+    }
   ]
   return (
     <div>
