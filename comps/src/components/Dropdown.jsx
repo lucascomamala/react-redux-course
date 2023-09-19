@@ -9,9 +9,14 @@ const Dropdown = ({ options, value, onChange }) => {
 
   useEffect(() => {
     const handler = (event) => {
-      console.log(ref.current)
+      if (!ref.current) return
+
+      if (!ref.current.contains(event.target)) {
+        setIsOpen(false)
+      }
     }
-    document.addEventListener('click', handler)
+
+    document.addEventListener('click', handler)    
     
     return () => {
       document.removeEventListener('click', handler)
