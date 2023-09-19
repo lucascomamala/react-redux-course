@@ -1,4 +1,14 @@
 const Table = ({ data }) => {
+  const rows = data.map((item, index) => {
+    return (
+      <tr key={index}>
+        <td className={item.color}>{item.name}</td>
+        <td className={item.color}>{item.color}</td>
+        <td className={item.color}>{item.score}</td>
+      </tr>
+    )
+  })
+  
   return (
     <table>
       <thead>
@@ -9,6 +19,7 @@ const Table = ({ data }) => {
         </tr>
       </thead>
       <tbody>
+        {rows}
       </tbody>
     </table>
   )
