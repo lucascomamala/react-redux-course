@@ -45,7 +45,8 @@ const SortableTable = (props) => {
       ...col,
       header: () => (
         <th onClick={() => handleClick(col.label)}>
-          {col.label} SORTABLE
+          {col.label}
+          {getIcons(col.label, sortBy, sortOrder)}
         </th>)
     }
   })
@@ -57,6 +58,13 @@ const SortableTable = (props) => {
     <Table {...props} data={sortedData} config={newConfig} />
   </div>
   )
+}
+
+const getIcons = (label, sortBy, sortOrder) => {
+  if (label !== sortBy) return 'both'
+  if (sortOrder === 'asc') return 'asc'
+  if (sortOrder === 'desc') return 'desc'
+  return 'both'
 }
 
 export default SortableTable
