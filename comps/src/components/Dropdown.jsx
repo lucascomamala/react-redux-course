@@ -11,6 +11,10 @@ const Dropdown = ({ options, value, onChange }) => {
       console.log(event.target)
     }
     document.addEventListener('click', handler)
+    
+    return () => {
+      document.removeEventListener('click', handler)
+    }
   }, [])
 
   const handleToggleOpen = () => {
