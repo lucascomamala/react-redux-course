@@ -9,11 +9,11 @@ const Table = ({ data, config }) => {
   const rows = data.map((item, index) => {
     return (
       <tr className="border-b" key={index}>
-        <td className='p-3'>{item.name}</td>
+        <td className='p-3'>{config[0].render(item)}</td>
         <td className='p-3'>
-          <div className={`p-3 m-2 ${item.color}`} />
+          {config[1].render(item)}
         </td>
-        <td className='p-3'>{item.score}</td>
+        <td className='p-3'>{config[2].render(item)}</td>
       </tr>
     )
   })

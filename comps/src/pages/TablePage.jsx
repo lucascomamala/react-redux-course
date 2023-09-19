@@ -9,9 +9,18 @@ const TablePage = () => {
   ]
 
   const config = [
-    { label: 'Fruit' },
-    { label: 'Color' },
-    { label: 'Score' },
+    {
+      label: 'Fruit',
+      render: (item) => item.name
+    },
+    {
+      label: 'Color',
+      render: (item) => <div className={`p-3 m-2 ${item.color}`} />
+    },
+    {
+      label: 'Score',
+      render: (item) => item.score
+    },
   ]
   return (
     <div>
