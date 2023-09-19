@@ -6,10 +6,10 @@ const Table = ({ data, config }) => {
     )
   })
 
-  const rows = data.map((item, index) => {
+  const rows = data.map((rowData, index) => {
     const cells = config.map((col) => {
       return (
-        <td className='p-2' key={col.label}>{col.render(item)}</td>
+        <td className='p-2' key={col.label}>{col.render(rowData)}</td>
       )
     })
 
