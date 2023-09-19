@@ -3,7 +3,9 @@ import { useState } from 'react'
 import ButtonPage from './pages/ButtonPage'
 import AccordionPage from './pages/AccordionPage'
 import DropdownPage from './pages/DropdownPage'
+
 import Link from './components/Link'
+import Route from './components/Route'
 
 function App() {
 
@@ -12,9 +14,17 @@ function App() {
     <div>
       <Link path="/buttons">Buttons</Link>
       <Link path="/accordions">Accordions</Link>
-      <ButtonPage />
-      <AccordionPage />
-      <DropdownPage />
+      <div>
+        <Route path="/buttons">
+          <ButtonPage />
+        </Route>
+        <Route path="/accordions">
+          <AccordionPage />
+        </Route>
+        <Route path="/dropdowns">
+          <DropdownPage />
+        </Route>
+      </div>
     </div>
   )
 }
