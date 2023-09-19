@@ -6,14 +6,10 @@ import Button from '../components/Button'
 const ModalPage = () => {
   const [showModal, setShowModal] = useState(false)
 
-  const handleClick = () => {
-    setShowModal(true)
-  }
-
   return (
     <div>
-      <Button onClick={handleClick} primary className='mb-3'>Open Modal</Button>
-      {showModal && <Modal>Modal Content</Modal>}
+      <Button onClick={() => setShowModal(true)} primary className='mb-3'>Open Modal</Button>
+      {showModal && <Modal onClose={() => setShowModal(false)}>Modal Content</Modal>}
     </div>
   )
 }
