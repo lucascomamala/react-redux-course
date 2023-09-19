@@ -3,32 +3,28 @@ import { GoBell, GoTerminal, GoDatabase } from 'react-icons/go'
 import Button from '../components/Button'
 
 function ButtonPage() {
-  const handleClick = () => {
-    alert('You clicked me!')
-  }
-
   return (
     <div>
       <div>
-        <Button className={'mb-5'} success rounded onClick={handleClick}>
+        <Button className={'mb-5'} success rounded>
           <GoTerminal />
           Click me!!
         </Button>
       </div>
       <div>
-        <Button danger onClick={() => console.log('hello')}>
+        <Button danger>
           <GoDatabase />
           Buy Now!
         </Button>
       </div>
       <div>
-        <Button warning onMouseEnter={() => { console.log("enter") }}>
+        <Button warning>
           <GoBell />
           See Deal!
         </Button>
       </div>
       <div>
-        <Button secondary outline onMouseLeave={() => { console.log("leave") }}>
+        <Button secondary outline>
           Hide Ads!
         </Button>
       </div>

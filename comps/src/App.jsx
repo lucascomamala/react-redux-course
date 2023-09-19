@@ -1,20 +1,19 @@
 import { useState } from 'react'
 
+import Sidebar from './components/Sidebar'
 import ButtonPage from './pages/ButtonPage'
 import AccordionPage from './pages/AccordionPage'
 import DropdownPage from './pages/DropdownPage'
 
-import Link from './components/Link'
 import Route from './components/Route'
 
 function App() {
 
 
   return (
-    <div>
-      <Link path="/buttons">Buttons</Link>
-      <Link path="/accordions">Accordions</Link>
-      <div>
+    <div className='container mx-auto grid grid-cols-6 gap-4 mt-4'>
+      <Sidebar />
+      <div className='col-span-5'>
         <Route path="/buttons">
           <ButtonPage />
         </Route>
