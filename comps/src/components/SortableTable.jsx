@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa'
 
 import Table from './Table'
 
@@ -22,9 +23,26 @@ const SortableTable = (props) => {
     }
   }
 
+  const newConfig = config.map((col) => {
+    if (!col.sortValue) return col
+    return {
+      ...col,
+      header: () => (
+        <th className='cursor-pointer hover:bg-gray-100' onClick={() => handleClick(col.label)}>
+          <div className='flex items-center'>
+            {col.label}
+            {getIcons(col.label, sortBy, sortOrder)}
+          </div>
+        </th>)
+    }
+  })
+
+  // Only sort data if sortOrder && sortBy are not null
+  // Make a copy of the 'data' prop
+  // Find the correct sortValue function and use it for sorting
   let sortedData = data
   if (sortOrder && sortBy) {
-    const { sortValue } = config.find(col => col.label === sortBy)
+    const { sortValue } = config.find((col) => col.label === sortBy)
     sortedData = [...data].sort((a, b) => {
       const valueA = sortValue(a)
       const valueB = sortValue(b)
@@ -36,22 +54,7 @@ const SortableTable = (props) => {
       }
       return (valueA - valueB) * reverseOrder
     })
-
   }
-
-  const newConfig = config.map((col) => {
-    if (!col.sortValue) return col
-    return {
-      ...col,
-      header: () => (
-        <th onClick={() => handleClick(col.label)}>
-          {col.label}
-          {getIcons(col.label, sortBy, sortOrder)}
-        </th>)
-    }
-  })
-
-
 
   return (<div>
     {sortOrder} - {sortBy}
@@ -61,10 +64,10 @@ const SortableTable = (props) => {
 }
 
 const getIcons = (label, sortBy, sortOrder) => {
-  if (label !== sortBy) return 'both'
-  if (sortOrder === 'asc') return 'asc'
-  if (sortOrder === 'desc') return 'desc'
-  return 'both'
+  if (label !== sortBy) return <FaSort />
+  if (sortOrder === 'asc') return <FaSortUp />
+  if (sortOrder === 'desc') return <FaSortDown />
+  return <FaSort />
 }
 
 export default SortableTable

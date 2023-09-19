@@ -3,8 +3,8 @@ import SortableTable from "../components/SortableTable"
 
 const TablePage = () => {
   const data = [
-    { name: 'Orange', color: 'bg-orange-500', score: 5 },
     { name: 'Apple', color: 'bg-red-500', score: 3 },
+    { name: 'Orange', color: 'bg-orange-500', score: 5 },
     { name: 'Banana', color: 'bg-yellow-500', score: 2 },
     { name: 'Pear', color: 'bg-green-500', score: 1 },
   ]
