@@ -2,13 +2,14 @@ import classNames from 'classnames'
 
 import useNavigation from '../hooks/use_navigation'
 
-const Link = ({ path, children }) => {
-  const { navigate } = useNavigation()
+const Link = ({ path, children, className, activeClassname }) => {
+  const { navigate, currentPath } = useNavigation()
 
   const classes = classNames(
     'text-blue-500',
     'underline',
-    'font-bold',
+    currentPath === path && activeClassname,
+    className
   )
 
   const handleClick = (e) => {
