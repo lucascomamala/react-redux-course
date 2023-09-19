@@ -1,4 +1,4 @@
-const Table = () => {
+const Table = ({data}) => {
   return (
     <div>Table</div>
   )
