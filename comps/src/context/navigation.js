@@ -13,9 +13,13 @@ function NavigationProvider({ children }) {
     return () => window.removeEventListener('popstate', handler)
   }, [])
 
+  const navigate = (path) => {
+    window.history.pushState({}, '', path)
+    setCurrentPath(path)
+  }
+
   return (
-    <NavigationContext.Provider value={{}}>
-    {currentPath}
+    <NavigationContext.Provider value={{ currentPath, navigate }}>
       {children}
     </NavigationContext.Provider>
   )
