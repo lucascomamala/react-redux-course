@@ -7,13 +7,15 @@ const Table = ({ data, config }) => {
   })
 
   const rows = data.map((item, index) => {
+    const cells = config.map((col) => {
+      return (
+        <td className='p-2' key={col.label}>{col.render(item)}</td>
+      )
+    })
+
     return (
       <tr className="border-b" key={index}>
-        <td className='p-3'>{config[0].render(item)}</td>
-        <td className='p-3'>
-          {config[1].render(item)}
-        </td>
-        <td className='p-3'>{config[2].render(item)}</td>
+        {cells}
       </tr>
     )
   })
