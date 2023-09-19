@@ -2,6 +2,7 @@ const Table = ({ data, config }) => {
 
   const headers = config.map((item) => {
     return (
+      item.header ? item.header() :
       <th key={item.label}>{item.label}</th>
     )
   })
