@@ -3,14 +3,14 @@ import "./styles.css";
 import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
 
-import { clearSongs, removeSong } from './store'
+import { clearSongs, reset } from './store'
 
 
 export default function App() {
   const dispatch = useDispatch()
 
   const handleResetClick = () => {
-    dispatch(clearSongs())
+    dispatch(reset())
   };
 
   return (
