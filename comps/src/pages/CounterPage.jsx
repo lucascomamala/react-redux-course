@@ -4,6 +4,12 @@ import Panel from '../components/Panel'
 import Button from '../components/Button'
 
 const reducer = (state, action) => {
+  if (action.type === 'INCREMENT') {
+    return {
+      ...state,
+      count: state.count + state.step
+    }
+  }
   //
 }
 
@@ -17,7 +23,7 @@ const CounterPage = ({ initialCount }) => {
 
 
   const increment = () => {
-    // setCount(count + step)
+    dispatch({ type: 'INCREMENT' })
   }
 
   const decrement = () => {
