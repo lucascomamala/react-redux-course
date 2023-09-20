@@ -19,4 +19,5 @@ const store = configureStore({
   }
 })
 
-export { store, songsSlice }
+export { store }
+export const { addSong, removeSong } = songsSlice.actions
