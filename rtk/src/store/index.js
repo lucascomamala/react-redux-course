@@ -29,6 +29,7 @@ const moviesSlice = createSlice({
 const store = configureStore({
   reducer: {
     songs: songsSlice.reducer,
+    movies: moviesSlice.reducer
   }
 })
 

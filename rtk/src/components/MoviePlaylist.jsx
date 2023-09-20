@@ -8,11 +8,10 @@ function MoviePlaylist() {
   const moviePlaylist = useSelector((state) => state.movies);
 
   const handleMovieAdd = (movie) => {
-    
+    dispatch(addMovie(movie))    
   };
   const handleMovieRemove = (movie) => {
-    // To Do:
-    // Remove movie from list of movies
+    dispatch(removeMovie(movie))
   };
 
   const renderedMovies = moviePlaylist.map((movie) => {
