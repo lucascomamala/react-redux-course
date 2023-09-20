@@ -10,7 +10,18 @@ const reducer = (state, action) => {
       count: state.count + state.step
     }
   }
-  //
+  if (action.type === 'DECREMENT') {
+    return {
+      ...state,
+      count: state.count - state.step
+    }
+  }
+  if (action.type === 'SET_STEP') {
+    return {
+      ...state,
+      step: action.payload
+    }
+  }
 }
 
 const CounterPage = ({ initialCount }) => {
@@ -21,23 +32,14 @@ const CounterPage = ({ initialCount }) => {
     step: 1
   })
 
-
-  const increment = () => {
-    dispatch({ type: 'INCREMENT' })
-  }
-
-  const decrement = () => {
-    // setCount(count - step)
-  }
-
   return (
     <Panel className='m-3'>
       <h1 className='text-lg'>Count is {state.count}</h1>
       <div className='flex flex-row space-x-3'>
-        <Button onClick={decrement}>
+        <Button onClick={() => dispatch({ type: 'DECREMENT' })}>
           Decrement
         </Button>
-        <Button onClick={increment}>
+        <Button onClick={() => dispatch({ type: 'INCREMENT' })}>
           Increment
         </Button>
       </div>
@@ -46,7 +48,8 @@ const CounterPage = ({ initialCount }) => {
         <input
           type='number'
           value={state.step}
-          onChange={{}}
+          // eslint-disable-next-line no-restricted-globals
+          onChange={() => dispatch({ type: 'SET_STEP', payload: Number(event.target.value) || 0 })}
           className='p-1 m-3 bg-gray-50 border border-gray-300'
         />
       </form>
