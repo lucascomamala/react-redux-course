@@ -10,25 +10,25 @@ const actions = {
 }
 
 const reducer = (state, action) => {
-  if (action.type === actions.INCREMENT) {
-    return {
-      ...state,
-      count: state.count + state.step
-    }
+  switch (action.type) {
+    case actions.INCREMENT:
+      return {
+        ...state,
+        count: state.count + state.step
+      }
+    case actions.DECREMENT:
+      return {
+        ...state,
+        count: state.count - state.step
+      }
+    case actions.SET_STEP:
+      return {
+        ...state,
+        step: action.payload
+      }
+    default:
+      throw new Error(`Unsupported action type: ${action.type}`)
   }
-  if (action.type === actions.DECREMENT) {
-    return {
-      ...state,
-      count: state.count - state.step
-    }
-  }
-  if (action.type === actions.SET_STEP) {
-    return {
-      ...state,
-      step: action.payload
-    }
-  }
-  return state
 }
 
 const CounterPage = ({ initialCount }) => {
@@ -56,7 +56,7 @@ const CounterPage = ({ initialCount }) => {
           type='number'
           value={state.step}
           onChange={() => dispatch({
-          // eslint-disable-next-line no-restricted-globals
+            // eslint-disable-next-line no-restricted-globals
             type: actions.SET_STEP, payload: Number(event.target.value) || 0
           })}
           className='p-1 m-3 bg-gray-50 border border-gray-300'
