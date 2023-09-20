@@ -17,9 +17,6 @@ const CarList = () => {
 
   const renderedCars = cars.map((car) => {
     const match = name && car.name.toLowerCase().includes(name.toLowerCase())
-    console.log('name', name)
-    console.log('car.name', car.name)
-    console.log('match', match)
 
     return (
       <div key={car.id} className={`panel ${match && 'bold'}`}>
