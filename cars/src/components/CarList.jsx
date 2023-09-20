@@ -1,6 +1,10 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { removeCar } from '../store'
 
 const CarList = () => {
+  const dispatch = useDispatch()
+  
   const cars = useSelector(state => state.cars.data)
 
   const renderedCars = cars.map(car => (
@@ -8,7 +12,7 @@ const CarList = () => {
       <p>
         <strong>{car.name}</strong> - ${car.cost}
       </p>
-      <button className="button is-danger" onClick={() => { }}>
+      <button className="button is-danger" onClick={() => { dispatch(removeCar({ payload: car.id })) }}>
         Delete
       </button>
     </div>
