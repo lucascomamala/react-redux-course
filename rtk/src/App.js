@@ -1,10 +1,16 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./styles.css";
 import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
 
+import { clearSongs, removeSong } from './store'
+
+
 export default function App() {
+  const dispatch = useDispatch()
+
   const handleResetClick = () => {
-    //
+    dispatch(clearSongs())
   };
 
   return (

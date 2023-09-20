@@ -9,6 +9,9 @@ const songsSlice = createSlice({
     },
     removeSong(state, action) {
       return state.filter(song => song !== action.payload)
+    },
+    clearSongs(state) {
+      return []
     }
   }
 })
@@ -34,5 +37,5 @@ const store = configureStore({
 })
 
 export { store }
-export const { addSong, removeSong } = songsSlice.actions
+export const { addSong, removeSong, clearSongs } = songsSlice.actions
 export const { addMovie, removeMovie } = moviesSlice.actions
