@@ -13,7 +13,9 @@ const formSlice = createSlice({
     setCost: (state, action) => {
       state.cost = action.payload
     }
-  }
+  },
+  extraReducers: {
+    
 })
 
 export const {setName, setCost} = formSlice.actions
