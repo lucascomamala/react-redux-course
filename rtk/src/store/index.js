@@ -19,13 +19,12 @@ const store = configureStore({
   }
 })
 
+// console.log(songsSlice.actions.addSong())
+
 const startingState = store.getState()
 console.log(JSON.stringify(startingState))
 
-store.dispatch({
-  type: 'song/addSong',
-  payload: 'November Rain'
-})
+store.dispatch(songsSlice.actions.addSong('Smells Like Teen Spirit'))
 
 const endingState = store.getState()
 console.log(JSON.stringify(endingState))
