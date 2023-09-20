@@ -1,23 +1,32 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 
 import Panel from '../components/Panel'
 import Button from '../components/Button'
 
+const reducer = (state, action) => {
+  //
+}
+
 const CounterPage = ({ initialCount }) => {
-  const [count, setCount] = useState(initialCount)
-  const [step, setStep] = useState(1)
+  // const [count, setCount] = useState(initialCount)
+  // const [step, setStep] = useState(1)
+  const [state, dispatch] = useReducer(reducer, {
+    count: initialCount,
+    step: 1
+  })
+
 
   const increment = () => {
-    setCount(count + step)
+    // setCount(count + step)
   }
 
   const decrement = () => {
-    setCount(count - step)
+    // setCount(count - step)
   }
 
   return (
     <Panel className='m-3'>
-      <h1 className='text-lg'>Count is {count}</h1>
+      <h1 className='text-lg'>Count is {state.count}</h1>
       <div className='flex flex-row space-x-3'>
         <Button onClick={decrement}>
           Decrement
@@ -30,8 +39,8 @@ const CounterPage = ({ initialCount }) => {
         <label>By how much</label>
         <input
           type='number'
-          value={step}
-          onChange={e => setStep(parseInt(e.target.value) || 0)}
+          value={state.step}
+          onChange={{}}
           className='p-1 m-3 bg-gray-50 border border-gray-300'
         />
       </form>
