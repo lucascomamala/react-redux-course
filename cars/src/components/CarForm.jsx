@@ -10,8 +10,6 @@ const CarForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(addCar({ name, cost }))
-    dispatch(setCost(0))
-    dispatch(setName(''))
   }
 
   return (
