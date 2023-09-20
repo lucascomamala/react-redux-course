@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./styles.css";
 import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
 
-import { clearSongs, reset } from './store'
+import { reset } from './store'
 
 
 export default function App() {

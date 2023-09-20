@@ -32,6 +32,9 @@ const moviesSlice = createSlice({
     },
     removeMovie(state, action) {
       return state.filter(movie => movie !== action.payload)
+    },
+    clearMovies(state) {
+      return []
     }
   },
   extraReducers: (builder) => {
