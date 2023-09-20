@@ -3,25 +3,32 @@ import { useReducer } from 'react'
 import Panel from '../components/Panel'
 import Button from '../components/Button'
 
+const actions = {
+  INCREMENT: 'INCREMENT',
+  DECREMENT: 'DECREMENT',
+  SET_STEP: 'SET_STEP'
+}
+
 const reducer = (state, action) => {
-  if (action.type === 'INCREMENT') {
+  if (action.type === actions.INCREMENT) {
     return {
       ...state,
       count: state.count + state.step
     }
   }
-  if (action.type === 'DECREMENT') {
+  if (action.type === actions.DECREMENT) {
     return {
       ...state,
       count: state.count - state.step
     }
   }
-  if (action.type === 'SET_STEP') {
+  if (action.type === actions.SET_STEP) {
     return {
       ...state,
       step: action.payload
     }
   }
+  return state
 }
 
 const CounterPage = ({ initialCount }) => {
@@ -36,10 +43,10 @@ const CounterPage = ({ initialCount }) => {
     <Panel className='m-3'>
       <h1 className='text-lg'>Count is {state.count}</h1>
       <div className='flex flex-row space-x-3'>
-        <Button onClick={() => dispatch({ type: 'DECREMENT' })}>
+        <Button onClick={() => dispatch({ type: actions.DECREMENT })}>
           Decrement
         </Button>
-        <Button onClick={() => dispatch({ type: 'INCREMENT' })}>
+        <Button onClick={() => dispatch({ type: actions.INCREMENT })}>
           Increment
         </Button>
       </div>
@@ -48,8 +55,10 @@ const CounterPage = ({ initialCount }) => {
         <input
           type='number'
           value={state.step}
+          onChange={() => dispatch({
           // eslint-disable-next-line no-restricted-globals
-          onChange={() => dispatch({ type: 'SET_STEP', payload: Number(event.target.value) || 0 })}
+            type: actions.SET_STEP, payload: Number(event.target.value) || 0
+          })}
           className='p-1 m-3 bg-gray-50 border border-gray-300'
         />
       </form>
