@@ -21,6 +21,7 @@ const Button = ({
     'rounded-full': rounded,
     'bg-white': outline,
     'text-white': !outline,
+    'text-black': !primary && !secondary && !success && !warning && !danger,
     'text-blue-500': outline && primary,
     'text-gray-900': outline && secondary,
     'text-green-500': outline && success,
