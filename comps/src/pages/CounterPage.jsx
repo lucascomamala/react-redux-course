@@ -1,4 +1,5 @@
 import { useReducer } from 'react'
+import { produce } from 'immer'
 
 import Panel from '../components/Panel'
 import Button from '../components/Button'
@@ -12,29 +13,21 @@ const actions = {
 const reducer = (state, action) => {
   switch (action.type) {
     case actions.INCREMENT:
-      return {
-        ...state,
-        count: state.count + state.step
-      }
+      state.count += state.step
+      return
     case actions.DECREMENT:
-      return {
-        ...state,
-        count: state.count - state.step
-      }
+      state.count -= state.step
+      return
     case actions.SET_STEP:
-      return {
-        ...state,
-        step: action.payload
-      }
+      state.step = action.payload
+      return
     default:
       throw new Error(`Unsupported action type: ${action.type}`)
   }
 }
 
 const CounterPage = ({ initialCount }) => {
-  // const [count, setCount] = useState(initialCount)
-  // const [step, setStep] = useState(1)
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(produce(reducer), {
     count: initialCount,
     step: 1
   })
