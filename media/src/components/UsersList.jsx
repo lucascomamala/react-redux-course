@@ -17,12 +17,8 @@ const UsersList = () => {
     setIsLoadingUsers(true)
     dispatch(fetchUsers())
       .unwrap()
-      .then(() => {
-        console.log('Users fetched successfully')
-      })
-      .catch((error) => {
-        console.log('error', error)
-      })
+      .catch((error) => setLoadingUsersError(error))
+      .finally(() => setIsLoadingUsers(false))
   }, [dispatch])
 
 
