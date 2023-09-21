@@ -10,6 +10,8 @@ const UsersList = () => {
 
   const [isLoadingUsers, setIsLoadingUsers] = useState(false)
   const [loadingUsersError, setLoadingUsersError] = useState(null)
+  const [isCreatingUser, setIsCreatingUser] = useState(false)
+  const [creatingUserError, setCreatingUserError] = useState(null)
 
   const { data } = useSelector((state) => state.users)
 
@@ -21,6 +23,13 @@ const UsersList = () => {
       .finally(() => setIsLoadingUsers(false))
   }, [dispatch])
 
+  const handleAddUser = () => {
+    setIsCreatingUser(true)
+    dispatch(addUser())
+      .unwrap()
+      .catch((error) => setCreatingUserError(error))
+      .finally(() => setIsCreatingUser(false))
+  }
 
   if (isLoadingUsers) {
     return (
@@ -45,9 +54,13 @@ const UsersList = () => {
     <div>
       <div className='flex flex-row justify-between m-3'>
         <h1 className='m-2 text-xl'>Users</h1>
-        <Button onClick={() => dispatch(addUser())}>
-          Add User
-        </Button>
+        {
+          isCreatingUser ? 'Adding user...' :
+            <Button onClick={handleAddUser}>
+              + Add User
+            </Button>
+        }
+        {creatingUserError && <div>Error adding user...</div>}
       </div>
       {renderedUsers}
     </div>
