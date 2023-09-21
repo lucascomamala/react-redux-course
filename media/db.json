@@ -3,6 +3,22 @@
     {
       "id": 1,
       "name": "Myra"
+    },
+    {
+      "name": "Krystal O'Hara",
+      "id": 2
+    },
+    {
+      "name": "Oliver Bogisich",
+      "id": 3
+    },
+    {
+      "name": "Bennie Parker",
+      "id": 4
+    },
+    {
+      "name": "Heather Littel",
+      "id": 5
     }
   ],
   "albums": [],
