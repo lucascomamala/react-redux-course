@@ -5,6 +5,7 @@ import { fetchUsers, addUser, removeUser } from '../../store'
 import { useThunk } from '../../hooks/useThunk'
 
 import { Skeleton, Button } from '../'
+import { UserListItem } from '../'
 
 
 const UsersList = () => {
@@ -31,11 +32,7 @@ const UsersList = () => {
     content = <div>Error fetching data...</div>
   } else {
     content = data.map((user) => (
-      <div key={user.id} className='mb-2 border rounded'>
-        <div className='p-2 justify-between items-center cursor-pointer'>
-          {user.name}
-        </div>
-      </div>
+      <UserListItem key={user.id} user={user} />
     ))
   }
 
