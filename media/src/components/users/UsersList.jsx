@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-import { fetchUsers, addUser } from '../store'
-import { useThunk } from '../hooks/useThunk'
-import Skeleton from './Skeleton'
-import Button from './Button'
+import { fetchUsers, addUser, removeUser } from '../../store'
+import { useThunk } from '../../hooks/useThunk'
+
+import { Skeleton, Button } from '../'
 
 
 const UsersList = () => {
