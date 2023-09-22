@@ -10,12 +10,21 @@ const UserListItem = ({ user }) => {
 
   return (
     <div className='mb-2 border rounded'>
-      <div className='p-2 justify-between items-center cursor-pointer'>
-        <Button loading={isRemovingUser} onClick={() => doRemoveUser(user)}>
-          <GoTrash />
-        </Button>
-        {removingUserError && console.log(user)}
-        {user.name}
+      <div className='flex p-2 justify-between items-center cursor-pointer'>
+        <div className='flex flex-row items-center justify-between'>
+          <Button
+            className='mr-3'
+            loading={isRemovingUser}
+            onClick={() => {
+              console.log(user)
+              doRemoveUser(user)
+            }}
+          >
+            <GoTrash />
+          </Button>
+          {removingUserError && console.log(removingUserError)}
+          {user.name}
+        </div>
       </div>
     </div>
   )
