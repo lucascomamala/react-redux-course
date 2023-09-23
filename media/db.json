@@ -15,24 +15,12 @@
     {
       "name": "Mrs. Shirley Langworth-Schaefer",
       "id": 4
-    }
-  ],
-  "albums": [
-    {
-      "userId": 4,
-      "title": "Elegant Plastic Chips",
-      "id": 12
     },
     {
-      "userId": 1,
-      "title": "Unbranded Fresh Soap",
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "title": "Handmade Bronze Cheese",
-      "id": 14
+      "name": "Marvin Fadel",
+      "id": 5
     }
   ],
+  "albums": [],
   "photos": []
 }

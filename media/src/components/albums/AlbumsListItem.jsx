@@ -6,8 +6,14 @@ import { useRemoveAlbumMutation } from '../../store'
 const AlbumsListItem = ({ album }) => {
   const [removeAlbum, results] = useRemoveAlbumMutation()
 
+  const handleDeleteAlbum = (e) => {
+    e.stopPropagation()
+    removeAlbum(album)
+  }
+  
+
   const header = <>
-    <Button className='mr-2' loading={results.loading} onClick={() => removeAlbum(album)}>
+    <Button className='mr-2' loading={results.isLoading} onClick={handleDeleteAlbum}>
       <GoTrash />
     </Button>
     {album.title}
