@@ -72,6 +72,16 @@
       "userId": 4,
       "title": "Elegant Plastic Chips",
       "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Bronze Chair",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Bespoke Fresh Shoes",
+      "id": 14
     }
   ],
   "photos": []

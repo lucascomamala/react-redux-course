@@ -4,7 +4,6 @@ import { Skeleton, ExpandablePanel, Button } from '../'
 const AlbumsList = ({ user }) => {
   const { data, error, isLoading } = useGetAlbumsQuery(user)
   const [addAlbum, results] = useAddAlbumMutation()
-  console.log(results)
 
   let content
 
@@ -23,9 +22,9 @@ const AlbumsList = ({ user }) => {
 
   return (
     <div>
-      <div>
-        AlbumsList {user.name}
-        <Button onClick={() => addAlbum(user)}>
+      <div className="m-2 flex flex-row items-center justify-between">
+        <h3 className="text-lg font-bold">Albums for {user.name}</h3>
+        <Button loading={results.isLoading} onClick={() => addAlbum(user)}>
           + Add Album
         </Button>
       </div>

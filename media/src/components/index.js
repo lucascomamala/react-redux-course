@@ -7,7 +7,6 @@ import UsersList from './users/UsersList'
 import UserListItem from './users/UserListItem'
 
 import AlbumsList from './albums/AlbumsList'
-import AlbumListItem from './albums/AlbumListItem'
 
 export {
   Button,
@@ -16,6 +15,5 @@ export {
   UsersList,
   UserListItem,
   AlbumsList,
-  AlbumListItem,
   ExpandablePanel
 }
