@@ -1,14 +1,17 @@
 import { GoTrash } from 'react-icons/go'
 
 import { Button, ExpandablePanel } from '../'
+import { useRemoveAlbumMutation } from '../../store'
 
 const AlbumsListItem = ({ album }) => {
-  const header = <div>
-    <Button>
+  const [removeAlbum, results] = useRemoveAlbumMutation()
+
+  const header = <>
+    <Button className='mr-2' loading={results.loading} onClick={() => removeAlbum(album)}>
       <GoTrash />
     </Button>
     {album.title}
-  </div>
+  </>
 
   return <ExpandablePanel key={album.id} header={header}>
     list of photos
