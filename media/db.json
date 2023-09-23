@@ -19,19 +19,19 @@
   ],
   "albums": [
     {
-      "userId": 1,
-      "title": "Ergonomic Plastic Soap",
-      "id": 7
-    },
-    {
       "userId": 4,
       "title": "Elegant Plastic Chips",
       "id": 12
     },
     {
       "userId": 1,
-      "title": "Modern Metal Chicken",
-      "id": 16
+      "title": "Unbranded Fresh Soap",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Handmade Bronze Cheese",
+      "id": 14
     }
   ],
   "photos": []

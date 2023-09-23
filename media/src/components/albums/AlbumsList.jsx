@@ -2,12 +2,12 @@ import { useGetAlbumsQuery, useAddAlbumMutation } from "../../store"
 import { Skeleton, Button, AlbumsListItem } from '../'
 
 const AlbumsList = ({ user }) => {
-  const { data, error, isLoading } = useGetAlbumsQuery(user)
+  const { data, error, isFetching } = useGetAlbumsQuery(user)
   const [addAlbum, results] = useAddAlbumMutation()
 
   let content
 
-  if (isLoading) {
+  if (isFetching) {
     content = <Skeleton className='h-10 w-full' times={3} />
   } else if (error) {
     content = <div>{error}</div>
