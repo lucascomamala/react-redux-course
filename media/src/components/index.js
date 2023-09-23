@@ -4,9 +4,10 @@ import Panel from './ui/Panel'
 import ExpandablePanel from './ui/ExpandablePanel'
 
 import UsersList from './users/UsersList'
-import UserListItem from './users/UserListItem'
+import UserListItem from './users/UsersListItem'
 
 import AlbumsList from './albums/AlbumsList'
+import AlbumsListItem from './albums/AlbumsListItem'
 
 export {
   Button,
@@ -15,5 +16,6 @@ export {
   UsersList,
   UserListItem,
   AlbumsList,
-  ExpandablePanel
+  ExpandablePanel,
+  AlbumsListItem,
 }

@@ -1,6 +1,6 @@
 import { useGetAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } from "../../store"
+import { Skeleton, ExpandablePanel, Button, AlbumsListItem } from '../'
 
-import { Skeleton, ExpandablePanel, Button } from '../'
 const AlbumsList = ({ user }) => {
   const { data, error, isLoading } = useGetAlbumsQuery(user)
   const [addAlbum, results] = useAddAlbumMutation()
@@ -13,12 +13,9 @@ const AlbumsList = ({ user }) => {
   } else if (error) {
     content = <div>{error}</div>
   } else if (data) {
-    content = data.map(album => {
-      const header = album.title
-      return <ExpandablePanel key={album.id} header={header}>
-        list of photos
-      </ExpandablePanel>
-    })
+    content = data.map(album =>
+      <AlbumsListItem key={album.id} album={album} />
+    )
   }
 
   return (

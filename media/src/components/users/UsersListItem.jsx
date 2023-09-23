@@ -3,7 +3,7 @@ import { GoTrash } from 'react-icons/go'
 import { useThunk } from '../../hooks/useThunk'
 import { removeUser } from '../../store'
 
-import { Button, ExpandablePanel, AlbumsList } from '../'
+import { Button, ExpandablePanel, AlbumsList } from '..'
 
 const UserListItem = ({ user }) => {
   const [doRemoveUser, isRemovingUser, removingUserError] = useThunk(removeUser)
