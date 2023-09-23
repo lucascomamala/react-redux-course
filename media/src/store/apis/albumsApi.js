@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { faker } from '@faker-js/faker'
 
-// DEV ONLY!!
+// * DEV ONLY!!
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const albumsApi = createApi({
@@ -9,7 +9,7 @@ const albumsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3005',
     fetchFn: async (...args) => {
-      // Remove this line in production
+      // ! Remove this line in production
       await pause(1000)
       return fetch(...args)
     }
