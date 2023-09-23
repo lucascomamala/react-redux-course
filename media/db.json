@@ -20,8 +20,13 @@
   "albums": [
     {
       "id": 1,
-      "user_id": 1,
+      "userId": 1,
       "tittle": "Hiking Trip"
+    },
+    {
+      "userId": 1,
+      "title": "Modern Rubber Tuna",
+      "id": 2
     }
   ],
   "photos": []
