@@ -1,9 +1,10 @@
-import { useGetAlbumsQuery, useAddAlbumMutation } from "../../store"
+import { useGetAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } from "../../store"
 
 import { Skeleton, ExpandablePanel, Button } from '../'
 const AlbumsList = ({ user }) => {
   const { data, error, isLoading } = useGetAlbumsQuery(user)
   const [addAlbum, results] = useAddAlbumMutation()
+  const [removeAlbum, removeResults] = useRemoveAlbumMutation()
 
   let content
 
