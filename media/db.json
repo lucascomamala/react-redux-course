@@ -19,14 +19,44 @@
   ],
   "albums": [
     {
-      "id": 1,
-      "userId": 1,
-      "tittle": "Hiking Trip"
-    },
-    {
       "userId": 1,
       "title": "Modern Rubber Tuna",
       "id": 2
+    },
+    {
+      "userId": 2,
+      "title": "Ergonomic Granite Mouse",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "title": "Refined Soft Soap",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Awesome Granite Pants",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Modern Steel Shirt",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "Ergonomic Plastic Soap",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "title": "Gorgeous Metal Shoes",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "title": "Gorgeous Concrete Bacon",
+      "id": 9
     }
   ],
   "photos": []

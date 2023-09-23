@@ -13,7 +13,6 @@ const UserListItem = ({ user }) => {
       className='mr-3'
       loading={isRemovingUser}
       onClick={() => {
-        console.log(user)
         doRemoveUser(user)
       }}
     >

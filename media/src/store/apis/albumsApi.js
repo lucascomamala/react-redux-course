@@ -8,6 +8,7 @@ const albumsApi = createApi({
   }),
   endpoints: (builder) => ({
     addAlbum: builder.mutation({
+      invalidatesTags: ['Album'],
       query: (user) => ({
         url: '/albums',
         method: 'POST',
@@ -18,6 +19,7 @@ const albumsApi = createApi({
       }),
     }),
     getAlbums: builder.query({
+      providesTags: ['Album'],
       query: (user) => ({
         url: '/albums',
         params: {

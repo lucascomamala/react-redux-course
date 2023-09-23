@@ -13,6 +13,8 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(albumsApi.middleware),
 })
 
+window.store = store
+
 setupListeners(store.dispatch)
 
 

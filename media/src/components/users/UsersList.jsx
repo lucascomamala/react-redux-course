@@ -23,10 +23,8 @@ const UsersList = () => {
   }
 
   let content
-
   if (isLoadingUsers) {
     content = <Skeleton times={6} className='h-10 w-full' />
-
   } else if (loadingUsersError) {
     console.log(loadingUsersError)
     content = <div>Error fetching data...</div>
