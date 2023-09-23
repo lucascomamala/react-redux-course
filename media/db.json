@@ -57,6 +57,21 @@
       "userId": 2,
       "title": "Gorgeous Concrete Bacon",
       "id": 9
+    },
+    {
+      "userId": 1,
+      "title": "Tasty Metal Table",
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "title": "Ergonomic Concrete Mouse",
+      "id": 11
+    },
+    {
+      "userId": 4,
+      "title": "Elegant Plastic Chips",
+      "id": 12
     }
   ],
   "photos": []
