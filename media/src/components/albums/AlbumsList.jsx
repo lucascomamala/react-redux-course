@@ -1,5 +1,5 @@
 import { useGetAlbumsQuery, useAddAlbumMutation } from "../../store"
-import { Skeleton, ExpandablePanel, Button, AlbumsListItem } from '../'
+import { Skeleton, Button, AlbumsListItem } from '../'
 
 const AlbumsList = ({ user }) => {
   const { data, error, isLoading } = useGetAlbumsQuery(user)

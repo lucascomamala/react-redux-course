@@ -20,38 +20,8 @@
   "albums": [
     {
       "userId": 1,
-      "title": "Modern Rubber Tuna",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "title": "Refined Soft Soap",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "title": "Awesome Granite Pants",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "title": "Modern Steel Shirt",
-      "id": 6
-    },
-    {
-      "userId": 1,
       "title": "Ergonomic Plastic Soap",
       "id": 7
-    },
-    {
-      "userId": 1,
-      "title": "Gorgeous Metal Shoes",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "title": "Tasty Metal Table",
-      "id": 10
     },
     {
       "userId": 4,
@@ -60,18 +30,8 @@
     },
     {
       "userId": 1,
-      "title": "Rustic Bronze Chair",
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "title": "Bespoke Fresh Shoes",
-      "id": 14
-    },
-    {
-      "userId": 2,
-      "title": "Handmade Metal Computer",
-      "id": 15
+      "title": "Modern Metal Chicken",
+      "id": 16
     }
   ],
   "photos": []
