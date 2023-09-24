@@ -1,9 +1,22 @@
-import { PhotosListItem, Button } from "../"
+import { PhotosListItem, Button, Skeleton } from "../"
 import { useGetPhotosQuery, useAddPhotoMutation } from "../../store"
 
 const PhotosList = ({ album }) => {
-  const { data: photos, isLoading } = useGetPhotosQuery(album)
+  const { data: photos, isFetching, error } = useGetPhotosQuery(album)
   const [addPhoto, addPhotoResults] = useAddPhotoMutation()
+
+  let content
+  if (isFetching) {
+    content = (
+      <Skeleton className='h-8 w-8' times={4} />
+    )
+  } else if (error) {
+    content = <div>{error}</div>
+  } else if (photos) {
+    content = photos.map((photo) => (
+      <PhotosListItem key={photo.id} photo={photo} />
+    ))
+  }
 
   return (
     <div>
@@ -17,6 +30,9 @@ const PhotosList = ({ album }) => {
         >
           + Add Photo
         </Button>
+      </div>
+      <div>
+        {content}
       </div>
     </div>
   )

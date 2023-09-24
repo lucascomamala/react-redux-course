@@ -23,21 +23,6 @@
   ],
   "albums": [
     {
-      "userId": 1,
-      "title": "Tasty Steel Computer",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "title": "Oriental Steel Shoes",
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "title": "Ergonomic Cotton Cheese",
-      "id": 5
-    },
-    {
       "userId": 2,
       "title": "Tasty Cotton Pizza",
       "id": 6
@@ -53,6 +38,31 @@
       "albumId": 6,
       "url": "https://loremflickr.com/150/150/abstract?lock=1613295010185216",
       "id": 2
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=3488726197993472",
+      "id": 3
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=4499775963529216",
+      "id": 4
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=1664222547148800",
+      "id": 5
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=402605196967936",
+      "id": 6
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=1045045113257984",
+      "id": 7
     }
   ]
 }

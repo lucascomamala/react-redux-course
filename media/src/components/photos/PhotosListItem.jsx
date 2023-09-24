@@ -1,6 +1,8 @@
-const PhotosListItem = () => {
+const PhotosListItem = ({photo}) => {
   return (
-    <div>PhotosListItem</div>
+    <div>
+      <img className="h-20 w-20" src={photo.url} alt="random pic" />
+    </div>
   )
 }
 
