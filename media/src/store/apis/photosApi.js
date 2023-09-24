@@ -15,8 +15,36 @@ const photosApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getPhotos: builder.query({}),
-    addPhoto: builder.mutation({}),
-    removePhoto: builder.mutation({}),
+    // * Requires an album object
+    getPhotos: builder.query({
+      query: (album) => ({
+        url: `/photos?albumId=${album.id}`,
+      }),
+    }),
+    // * Requires an album object
+    addPhoto: builder.mutation({
+      query: (album) => ({
+        url: '/photos',
+        method: 'POST',
+        body: {
+          albumId: album.id,
+          url: faker.image.abstract(150, 150, true),
+        },
+      }),
+    }),
+    // * Requires a photo object
+    removePhoto: builder.mutation({
+      query: (photo) => ({
+        url: `/photos/${photo.id}`,
+        method: 'DELETE',
+      }),
+    }),
   }),
 })    
+
+export const {
+  useGetPhotosQuery,
+  useAddPhotoMutation,
+  useRemovePhotoMutation,
+} = photosApi
+export default photosApi
