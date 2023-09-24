@@ -14,7 +14,7 @@ const AlbumsListItem = ({ album }) => {
 
   const header = <>
     <Button className='mr-2' loading={results.isLoading} onClick={handleDeleteAlbum}>
-      <GoTrash className='text-red-500' />
+      <GoTrash className='text-red-500 hover:text-red-700' />
     </Button>
     {album.title}
   </>

@@ -7,22 +7,26 @@ const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 const photosApi = createApi({
   reducerPath: 'photos',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3005',
-    // ! Remove this function in production
-    fetchFn: async (...args) => {
-      await pause(1000)
-      return fetch(...args)
-    },
+    baseUrl: 'http://localhost:3005'
   }),
   endpoints: (builder) => ({
     // * Requires an album object
     getPhotos: builder.query({
+      providesTags: (result, error, album) => {
+        const tags = result.map((photo) => ({
+          type: 'Photo',
+          id: photo.id,
+        }))
+        tags.push({ type: 'AlbumPhoto', id: album.id })
+        return tags
+      },
       query: (album) => ({
         url: `/photos?albumId=${album.id}`,
       }),
     }),
     // * Requires an album object
     addPhoto: builder.mutation({
+      invalidatesTags: (result, error, album) => [{ type: 'AlbumPhoto', id: album.id }],
       query: (album) => ({
         url: '/photos',
         method: 'POST',
@@ -34,13 +38,14 @@ const photosApi = createApi({
     }),
     // * Requires a photo object
     removePhoto: builder.mutation({
+      invalidatesTags: (result, error, photo) => [{ type: 'Photo', id: photo.id }],
       query: (photo) => ({
         url: `/photos/${photo.id}`,
         method: 'DELETE',
       }),
     }),
   }),
-})    
+})
 
 export const {
   useGetPhotosQuery,

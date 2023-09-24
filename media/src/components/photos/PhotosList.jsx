@@ -27,6 +27,7 @@ const PhotosList = ({ album }) => {
         <Button
           onClick={() => addPhoto(album)}
           loading={addPhotoResults.isLoading}
+          className="text-green-500 hover:text-green-400"
         >
           + Add Photo
         </Button>
