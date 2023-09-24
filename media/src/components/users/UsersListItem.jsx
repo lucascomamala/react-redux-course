@@ -16,7 +16,7 @@ const UserListItem = ({ user }) => {
         doRemoveUser(user)
       }}
     >
-      <GoTrash />
+      <GoTrash className='text-red-500' />
     </Button>
     {removingUserError && console.log(removingUserError)}
     {user.name}
