@@ -3,7 +3,7 @@ import { GoTrash } from "react-icons/go"
 import { useRemovePhotoMutation } from "../../store"
 
 const PhotosListItem = ({ photo }) => {
-  const [removePhoto, removePhotoResults] = useRemovePhotoMutation()
+  const [removePhoto] = useRemovePhotoMutation()
 
   return (
     <div className="relative m-2 cursor-pointer" onClick={() => removePhoto(photo)}>
