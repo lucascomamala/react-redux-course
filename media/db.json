@@ -21,6 +21,17 @@
       "id": 5
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "userId": 1,
+      "title": "Fantastic Rubber Fish",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "title": "Tasty Steel Computer",
+      "id": 2
+    }
+  ],
   "photos": []
 }

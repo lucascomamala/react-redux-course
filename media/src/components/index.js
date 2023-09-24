@@ -9,6 +9,9 @@ import UserListItem from './users/UsersListItem'
 import AlbumsList from './albums/AlbumsList'
 import AlbumsListItem from './albums/AlbumsListItem'
 
+import PhotosList from './photos/PhotosList'
+import PhotosListItem from './photos/PhotosListItem'
+
 export {
   Button,
   Skeleton,
@@ -18,4 +21,6 @@ export {
   AlbumsList,
   ExpandablePanel,
   AlbumsListItem,
+  PhotosList,
+  PhotosListItem,
 }

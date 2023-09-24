@@ -8,8 +8,8 @@ const albumsApi = createApi({
   reducerPath: 'albums',
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3005',
+    // ! Remove this function in production
     fetchFn: async (...args) => {
-      // ! Remove this line in production
       await pause(1000)
       return fetch(...args)
     }
