@@ -24,11 +24,6 @@
   "albums": [
     {
       "userId": 1,
-      "title": "Fantastic Rubber Fish",
-      "id": 1
-    },
-    {
-      "userId": 1,
       "title": "Tasty Steel Computer",
       "id": 2
     },
@@ -36,7 +31,28 @@
       "userId": 1,
       "title": "Oriental Steel Shoes",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "title": "Ergonomic Cotton Cheese",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "title": "Tasty Cotton Pizza",
+      "id": 6
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=4384313684525056",
+      "id": 1
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=1613295010185216",
+      "id": 2
+    }
+  ]
 }
